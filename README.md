@@ -1,4 +1,4 @@
-# raycaster
+# Raycaster
 
 My attempt at building a general purpose raycasting engine for making games using Go and Ebiten.
 
