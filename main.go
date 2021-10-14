@@ -3,6 +3,7 @@ package main
 import (
 	"image/color"
 	"log"
+	"math"
 
 	"github.com/hajimehoshi/ebiten/v2"
 	"github.com/hajimehoshi/ebiten/v2/ebitenutil"
@@ -15,15 +16,15 @@ var (
 	mapx     int     = 8   // Map Width
 	mapy     int     = 8   // Map Height
 	mapScale int     = 64  // Map Unit Size
-	mapArray         = [8][8]int{
-		{1, 1, 1, 1, 1, 1, 1, 1},
-		{1, 0, 0, 0, 0, 0, 0, 1},
-		{1, 0, 0, 0, 0, 0, 0, 1},
-		{1, 0, 0, 0, 0, 0, 0, 1},
-		{1, 0, 0, 0, 0, 0, 0, 1},
-		{1, 0, 0, 0, 0, 0, 0, 1},
-		{1, 0, 0, 0, 0, 0, 0, 1},
-		{1, 1, 1, 1, 1, 1, 1, 1},
+	mapArray         = [64]int{
+		1, 1, 1, 1, 1, 1, 1, 1,
+		1, 0, 1, 0, 0, 0, 0, 1,
+		1, 0, 1, 0, 0, 0, 0, 1,
+		1, 0, 1, 0, 0, 0, 0, 1,
+		1, 0, 0, 0, 0, 0, 0, 1,
+		1, 0, 0, 0, 0, 1, 0, 1,
+		1, 0, 0, 0, 0, 0, 0, 1,
+		1, 1, 1, 1, 1, 1, 1, 1,
 	}
 	boot int = 0
 )
@@ -37,7 +38,7 @@ func (g *Game) Update() error {
 
 func (g *Game) Draw(screen *ebiten.Image) {
 	DrawMap(screen)
-	ebitenutil.DrawRect(screen, px, py, 3, 3, color.White)
+	ebitenutil.DrawLine(screen, px, py, px-math.Sin(pa)*10, py-math.Cos(pa)*10, color.White)
 }
 
 func (g *Game) Layout(outsideWidth, outsideHeight int) (screenWidth, screenHeight int) {
