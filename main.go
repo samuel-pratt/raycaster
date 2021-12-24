@@ -15,8 +15,8 @@ var (
 
 	px  float64 = 300 // Player X Coordinate
 	py  float64 = 300 // Player Y Coordinate
-	pdx float64 = 0   // Player delta X
-	pdy float64 = 0   // Player delta Y
+	pdx float64 = 1   // Player delta X
+	pdy float64 = 1   // Player delta Y
 	pa  float64 = 0   // Player Angle
 	ps  float64 = 2   // Player Speed
 

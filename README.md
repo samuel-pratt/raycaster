@@ -1,6 +1,6 @@
-# Raycaster
+# raycaster
 
-My attempt at building a general purpose raycasting engine for making games using Go and Ebiten.
+A raycasting engine built with Go and Ebiten.
 
 ### Credits
 
